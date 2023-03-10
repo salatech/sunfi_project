@@ -46,6 +46,7 @@ const App = () => {
 
   return (
     <div>
+      <h1 style={{textAlign:"center"}}>Enter your address below</h1>
       <SearchContainer >
         <input type="text" onChange={handleInputChange} value={query} placeholder="Search..." />
         <SearchButton type="button" onClick={handleSearch}>search</SearchButton>
