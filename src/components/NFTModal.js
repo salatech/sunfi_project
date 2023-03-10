@@ -10,25 +10,44 @@ const NFTModal = ({ nft, onClose }) => {
   return (
     <Wrapper>
       <div className="nft-modal">
-      
         <img src={nft.image_url || defaultImage} alt={nft.name} />
 
         <span className="details">
           <h3>{nft.name}</h3>
-          <p> {'Description :: ' +  nft.asset_contract.description}</p>
-          <p> { 'Owner name :: ' + nft.asset_contract.name}</p>
-          <p><samp> { 'Owner address :: ' + nft.asset_contract.address} </samp></p>
-
+          <p>
+            <b>Description</b>
+            <br />
+            {nft.asset_contract.description}
+          </p>
+          <p>
+            <b>Contract type</b>
+            <br />
+            {nft.asset_contract.asset_contract_type}
+          </p>
+          <p>
+            <b>Owner's name</b>
+            <br />
+            {nft.asset_contract.name}
+          </p>
+          <p>
+            <b>Owner's address</b>
+            <br />
+            <samp>{nft.asset_contract.address}</samp>
+          </p>
+          <p>
+            <b>Date created</b>
+            <br />
+            {nft.asset_contract.created_date}
+          </p>
           {/* Link to purchase the NFT */}
-      
           <a href={nft.permalink} target="_blank" rel="noopener noreferrer">
             Buy Now
           </a>
           <br />
           <br />
+
           {/* Button to close the modal */}
           <button onClick={onClose}>Close</button>
-
         </span>
       </div>
     </Wrapper>
@@ -96,6 +115,7 @@ const Wrapper = styled.section`
     margin: 1rem 0;
     font-size: 2rem;
     text-align: center;
+    text-transform:lowercase;
   }
 
   .nft-modal .details p {
@@ -137,9 +157,7 @@ samp{
   }
 
   @media screen and (max-width: 768px) {
-    .details p {
-      text-align: justify;
-    }
+    
     .nft-modal{
       padding:5px;
     }
@@ -151,6 +169,7 @@ samp{
   }
   .nft-modal .details p {
     font-size:1rem;
+    text-align:justify;
   }
 `;
 export default NFTModal;
