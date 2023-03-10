@@ -17,8 +17,8 @@ const App = () => {
   // Use a state variable to store the selected NFT object
   const [selectedNFT, setSelectedNFT] = useState(null);
 
-  // Use the useEffect hook to fetch NFTs from the API when the query state changes
-  useEffect(() => {
+  // Define event handlers for the search input field and NFT card clicks
+  const handleSearch = () => {
     async function fetchNFTs() {
       try {
         const response = await axios.get(
@@ -30,10 +30,9 @@ const App = () => {
       }
     }
     fetchNFTs();
-  }, [query]);
+  };
 
-  // Define event handlers for the search input field and NFT card clicks
-  const handleSearch = (event) => {
+  const handleInputChange = (event) => {
     setQuery(event.target.value);
   };
 
@@ -48,14 +47,16 @@ const App = () => {
   return (
     <div>
       <SearchContainer >
-        <input type="text" onChange={handleSearch} value={query} placeholder="Search..." />
-        <SearchButton type="submit">search</SearchButton>
+        <input type="text" onChange={handleInputChange} value={query} placeholder="Search..." />
+        <SearchButton type="button" onClick={handleSearch}>search</SearchButton>
       </SearchContainer >
       <NFTGrid >
         {/* Use optional chaining to check if nfts is not null or undefined before mapping over it */}
         {nfts?.map((nft) => (
           <NFTCard key={nft.token_id} nft={nft} onClick={handleCardClick} />
         ))}
+        {/* Use a conditional rendering to display the
+
         {/* Use a conditional rendering to display the NFTModal only if a NFT object is selected */}
         {selectedNFT && (
           <NFTModal nft={selectedNFT} onClose={handleModalClose} />

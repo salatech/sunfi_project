@@ -87,7 +87,7 @@ const Modal = styled.div`
 const ModalDetails = styled.span`
   width: 100%;
   text-align: left;
-  padding-left: 20px;
+  padding-left: 10px;
 
   p {
     margin: 0 0 1rem;
@@ -138,7 +138,6 @@ const Wrapper = styled.section`
   }
   .nft-modal .details p {
     font-size:1rem;
-    text-align:justify;
   }
 `;
 export default NFTModal;
