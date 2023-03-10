@@ -44,11 +44,12 @@ const NFTModal = ({ nft, onClose }) => {
 
 const Modal = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: rgba(255,255,255, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,6 +59,7 @@ const Modal = styled.div`
   text-transform: capitalize;
   overflow-y: scroll;
   animation: fadeIn 0.5s ease-in;
+}
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -74,7 +76,6 @@ const Modal = styled.div`
     border-radius: 8px;
     animation: slideIn 0.5s forwards;
   }
-
   @keyframes slideIn {
     from {
       transform: translateY(100%);
