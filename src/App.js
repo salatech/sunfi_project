@@ -65,12 +65,14 @@ const App = () => {
     </div>
   );
 };
+
  const NFTGrid =styled.div`
  display: grid;
  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
  gap: 1rem;
  margin: 2rem auto;
  max-width: 1200px;
+
  `
  const SearchContainer =styled.div`
  display: flex;
