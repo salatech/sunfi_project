@@ -2,9 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // Default image URL to use if no image URL is provided for the NFT
-
-const defaultImage =
-  "https://www.investopedia.com/thmb/WNUFveh2kWsVvFZgFeUqrB9uLGA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/NFT_final-aa004ce971d24aecaa3f93688a35dec3.png";
+import DefaultImage from '../assets/defImage.png'
 
 // NFTCard component that displays an NFT and its details in a card
 
@@ -12,7 +10,7 @@ const NFTCard = ({ nft, onClick }) => {
   return (
     <NFTCardContent className="nft-card" onClick={() => onClick(nft)}>
       <NFTCardImage
-        src={nft.image_url ? nft.image_url : defaultImage}
+        src={nft.image_url || DefaultImage}
         alt={nft.name}
       />
       <NFTCardTitle>{nft.asset_contract.name}</NFTCardTitle>
