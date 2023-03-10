@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const App = () => {
   // Use a constant variable for the default address
-  const defaultAddress = "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d";
+  const defaultAddress = "0x8767B976Ba24284374933334fc117248554F5745";
   
   // Use a state variable to store the search query
   const [query, setQuery] = useState(defaultAddress);
@@ -44,6 +44,20 @@ const App = () => {
     setSelectedNFT(null);
   };
 
+  useEffect(() => {
+    async function fetchNFTs() {
+      try {
+        const response = await axios.get(
+          `https://api.opensea.io/api/v1/assets?owner=${defaultAddress}`
+        );
+        setNFTs(response.data.assets);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchNFTs();
+  }, []);
+
   return (
     <div>
       <h3 style={{textAlign:"center"}}>Enter your address below</h3>
@@ -56,8 +70,6 @@ const App = () => {
         {nfts?.map((nft) => (
           <NFTCard key={nft.token_id} nft={nft} onClick={handleCardClick} />
         ))}
-        {/* Use a conditional rendering to display the
-
         {/* Use a conditional rendering to display the NFTModal only if a NFT object is selected */}
         {selectedNFT && (
           <NFTModal nft={selectedNFT} onClose={handleModalClose} />
