@@ -1,0 +1,59 @@
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  overflow: hidden;
+  margin:auto;
+}
+
+.search-container input[type="text"] {
+  flex: 1;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  outline:none;
+}
+
+.search-container button[type="submit"] {
+  height: 40px;
+  width: 60px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-container button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* CSS for the NFT grid */
+.nft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+/* CSS for the NFT card */
+
+
+/* CSS for the NFT modal */
