@@ -87,8 +87,9 @@ const Wrapper = styled.section`
   }
 
   .details {
-    max-width: 600px;
+    width:100%;
     text-align: center;
+   
   }
 
   .nft-modal h3 {
@@ -97,12 +98,12 @@ const Wrapper = styled.section`
     text-align: center;
   }
 
-  .nft-modal p {
+  .nft-modal .details p {
     margin: 0 0 1rem;
     font-size: 1.25rem;
     text-align: center;
   }
-  .nft-modal a {
+  .nft-modal .details a {
     width: 100px;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
@@ -119,7 +120,7 @@ const Wrapper = styled.section`
     transition: background-color 0.2s ease-in-out;
   }
 
-  .nft-modal button {
+  .nft-modal .details button {
     background-color: red;
     color: white;
     padding: 0.5rem 2rem;
@@ -128,8 +129,10 @@ const Wrapper = styled.section`
     text-transform: uppercase;
     margin-bottom: 2rem;
   }
-
-  .nft-modal a:hover {
+samp{
+  width:100%;
+}
+  .nft-modal .details a:hover {
     background-color: #444;
   }
 
