@@ -140,6 +140,17 @@ samp{
     .details p {
       text-align: justify;
     }
+    .nft-modal{
+      padding:5px;
+    }
+    samp{
+      overflow-wrap:anywhere;
+    }
+    .nft-modal h3 {
+      font-size:1rem;
+  }
+  .nft-modal .details p {
+    font-size:1rem;
   }
 `;
 export default NFTModal;
